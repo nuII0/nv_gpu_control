@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe NvGpuControl::Action::MaximumVoltage do
+RSpec.describe NvGpuControl::Action::PowerLimit do
 
   subject{ described_class.new(gpu_index: 1337) }
 

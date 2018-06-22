@@ -4,7 +4,7 @@ module NvGpuControl
   module Action
 
     # Enables control of maximum Power Draw for a GPU.
-    class MaximumVoltage
+    class PowerLimit
       include Loggable
 
       # @param gpu_index [Integer] assigned index for GPU by nvidia system tools.

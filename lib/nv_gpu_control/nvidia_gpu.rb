@@ -1,10 +1,10 @@
-require_relative 'action/maximum_voltage'
+require_relative 'action/power_limit'
 
 module NvGpuControl
 
   # Represents an actual Nvidia GPU on the system.
   class NvidiaGpu
-    attr_reader :maximum_voltage, :index, :name, :uuid
+    attr_reader :power_limit, :index, :name, :uuid
 
     # @param index [Integer] assigned index for GPU by nvidia system tools.
     # @param name [String] GPU Model Name
@@ -13,7 +13,7 @@ module NvGpuControl
       @index = index
       @name = name
       @uuid = uuid
-      @maximum_voltage = NvGpuControl::Action::MaximumVoltage.new(gpu_index: @index)
+      @power_limit = NvGpuControl::Action::PowerLimit.new(gpu_index: @index)
       #@memory_clock = NvGpuControl::Action::MemoryClock.new(index: @index)
       #@core_clock = NvGpuControl::Action::CoreClock.new(index: @index)
     end
