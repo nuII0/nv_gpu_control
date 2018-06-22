@@ -1,5 +1,5 @@
 # NvGpuControl
-A ruby gem for configuring Nvidia GPUs on a Linux system.
+A ruby gem for configuring Nvidia GPUs on Linux Systems.
 
 ## Notes
 The program makes use of the `nvidia-smi` cli-tool to fetch and control the state of a GPU.
@@ -11,7 +11,7 @@ As a rule of thumb, essentially all GPUs since the year 2011 are supported (Tesl
 Add NvGpuControl as dependency and query installed GPUs.
 
 ```rb
-require "NvGpuControl"
+require "nv_gpu_control"
 
 gpus = NvGpuControl.gpus
 
@@ -19,7 +19,7 @@ gpus = NvGpuControl.gpus
    @index=0,
    @name="GeForce GTX 1070",
    @uuid="GPU-88fc8d57-433e-4836-a678-06e6b6b7f24b">],
- [#<NvGpuControl::NvidiaGpu:0x0000564d8bee2f08
+ [#<NvGpuControl::NvidiaGpu:0x00003244eadd2f13
    @index=1,
    @name="GeForce GTX 1080 Ti",
    @uuid="GPU-3bd56316-82f6-4295-b50f-eaba0a38ff6f">]]
