@@ -1,2 +1,6 @@
+main.rb
+.yardoc
+.bundle
+Gemfile.lock
 doc/
 vendor/
