@@ -6,6 +6,7 @@ module NvGpuControl
   require_relative "nv_gpu_control/util/stdout_logger"
 
   require_relative "nv_gpu_control/nvidia_smi"
+  require_relative "nv_gpu_control/nvidia_settings"
   require_relative "nv_gpu_control/nvidia_gpu"
 
   @logger = Util::StdoutLogger.new

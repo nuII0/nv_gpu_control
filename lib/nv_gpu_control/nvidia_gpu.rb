@@ -1,10 +1,13 @@
 require_relative 'action/power_limit'
+require_relative 'action/core_clock_offset'
+require_relative 'action/memory_transfer_offset'
 
 module NvGpuControl
 
   # Represents an actual Nvidia GPU on the system.
   class NvidiaGpu
     attr_reader :power_limit, :index, :name, :uuid
+    attr_reader :memory_transfer_offset, :core_clock_offset
 
     # @param index [Integer] assigned index for GPU by nvidia system tools.
     # @param name [String] GPU Model Name
@@ -14,8 +17,8 @@ module NvGpuControl
       @name = name
       @uuid = uuid
       @power_limit = NvGpuControl::Action::PowerLimit.new(gpu_index: @index)
-      #@memory_clock = NvGpuControl::Action::MemoryClock.new(index: @index)
-      #@core_clock = NvGpuControl::Action::CoreClock.new(index: @index)
+      @memory_transfer_offset = NvGpuControl::Action::MemoryTransferOffset.new(gpu_index: @index)
+      @core_clock_offset = NvGpuControl::Action::CoreClockOffset.new(gpu_index: @index)
     end
   end
 end

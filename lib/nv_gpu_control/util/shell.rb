@@ -23,12 +23,6 @@ module NvGpuControl
         end
       end
 
-      def system(*args)
-        shell_command(args) do
-          [ Kernel.system(*args), $? ]
-        end
-      end
-
       def `(command)
         shell_command(command) do
           [ Kernel.`(command), $? ] # `] # - Hack to avoid confusing poor Vim
@@ -36,7 +30,7 @@ module NvGpuControl
       end
 
       def command?(name)
-        system('which', name, [:out, :err] => File::NULL)
+        Kernel.system('which', name, [:out, :err] => File::NULL)
         $?.success?
       end
 
